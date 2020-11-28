@@ -109,16 +109,16 @@ def main():
     # args = parser.parse_args()
 
     # json_file = args.json_file
-    json_file=r"D:\desktop\大岗山第二次飞行数据json(1)\大岗山第二次飞行数据json"
+    json_file=r"D:\desktop\大岗山\第二次飞行-2"
     image_folder=json_file+'\image'
     mask_folder=json_file+'\mask'
 
+    list = os.listdir(json_file)  # 获取json文件列表
     if not os.path.exists(image_folder):
         os.mkdir(image_folder)
     if not os.path.exists(mask_folder):
         os.mkdir(mask_folder)
 
-    list = os.listdir(json_file)   # 获取json文件列表
     # list=glob.glob(json_file+r'\\*.json')
     for i in range(0, len(list)):
         path = os.path.join(json_file, list[i])  # 获取每个json文件的绝对路径
